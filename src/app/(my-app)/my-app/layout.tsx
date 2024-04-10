@@ -16,7 +16,7 @@ export default function Layout({
     <>
       <MyAppHeader />
       {children}
-      <MyAppFooter />
+      {/* <MyAppFooter /> */}
     </>
   )
 }
