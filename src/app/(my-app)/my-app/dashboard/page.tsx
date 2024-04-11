@@ -49,12 +49,20 @@ export default function DashboardPage() {
         <h3 className="font-bold text-base">
           Current Clients: <span>3</span>
         </h3>
-        <Plus />
+        <Button
+          variant="outline"
+          size="icon"
+          className="hover:drop-shadow-lg active:scale-105"
+        >
+          <Plus />
+        </Button>
       </div>
-      <ScrollArea className="h-16 rounded-md mt-6">
+      <ScrollArea className="h-24 rounded-md mt-6">
         {tempClients.map((client) => (
           <>
-            <p className="text-base text-slate-700">{client.name}</p>
+            <p className="text-base text-slate-700 py-4 hover:cursor-pointer">
+              {client.name}
+            </p>
             <Separator />
           </>
         ))}

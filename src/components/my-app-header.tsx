@@ -3,9 +3,10 @@
 import { useState } from 'react'
 import Logo from '@/components/logo'
 import { cn } from '@/lib/utils'
-import { AlignJustify, CircleX } from 'lucide-react'
+import { AlignJustify, X } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { Button } from './ui/button'
 
 type MyAppNavLink = {
   label: string
@@ -63,7 +64,14 @@ export default function MyAppHeader() {
           }
         )}
       >
-        <CircleX className="m-4" onClick={handleToggleMenu} />
+        <Button
+          variant="outline"
+          size="icon"
+          className="hover:drop-shadow-lg active:scale-105 mt-8 ml-4"
+        >
+          <X onClick={handleToggleMenu} />
+        </Button>
+
         <ul className="flex flex-col gap-4 items-center h-full justify-center">
           {routes.map(({ label, path }) => (
             <li

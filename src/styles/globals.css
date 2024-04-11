@@ -1,4 +1,9 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-  
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .link-styles {
+    @apply text-slate-600 font-semibold text-base hover:text-blue-700 focus:text-blue-700 transition;
+  }
+}
