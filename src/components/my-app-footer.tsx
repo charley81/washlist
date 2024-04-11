@@ -1,3 +1,9 @@
 export default function MyAppFooter() {
-  return <div className="text-4xl">MyAppFooter</div>
+  return (
+    <footer className="text-4xl mt-auto">
+      <small className="text-sm">
+        &copy; Chris Harley {new Date().getFullYear()}
+      </small>
+    </footer>
+  )
 }

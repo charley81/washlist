@@ -13,10 +13,10 @@ export default function Layout({
   children: React.ReactNode
 }>) {
   return (
-    <>
+    <div className="flex flex-col max-w-6xl mx-auto min-h-screen py-8 px-2 md:px-8 ">
       <MyAppHeader />
       {children}
-      {/* <MyAppFooter /> */}
-    </>
+      <MyAppFooter />
+    </div>
   )
 }

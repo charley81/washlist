@@ -34,7 +34,7 @@ export default function MyAppHeader() {
 
   return (
     <header>
-      <div className="text-4xl flex justify-between items-center px-2 pt-8 md:px-8 max-w-6xl mx-auto">
+      <div className="text-4xl flex justify-between items-center">
         <Logo />
         <AlignJustify
           className="hover:cursor-pointer hover:scale-110 transition-all sm:hidden"
@@ -63,7 +63,7 @@ export default function MyAppHeader() {
           }
         )}
       >
-        <CircleX onClick={handleToggleMenu} />
+        <CircleX className="m-4" onClick={handleToggleMenu} />
         <ul className="flex flex-col gap-4 items-center h-full justify-center">
           {routes.map(({ label, path }) => (
             <li
