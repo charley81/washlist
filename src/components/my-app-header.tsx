@@ -1,7 +1,9 @@
 'use client'
 
+import { useState } from 'react'
 import Logo from '@/components/logo'
-import { AlignJustify } from 'lucide-react'
+import { cn } from '@/lib/utils'
+import { AlignJustify, CircleX } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -21,27 +23,61 @@ const routes: MyAppNavLink[] = [
   }
 ]
 
-const linkStyles = 'text-slate-600 font-semibold text-base'
+const linkStyles =
+  'text-slate-600 font-semibold text-base hover:text-blue-700 focus:text-blue-700 transition'
 
 export default function MyAppHeader() {
+  const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
 
+  const handleToggleMenu = () => setIsOpen(!isOpen)
+
   return (
-    <div className="text-4xl flex justify-between items-center px-2 pt-8 md:px-8 max-w-6xl mx-auto">
-      <Logo />
-      <AlignJustify className="hover:cursor-pointer hover:scale-110 transition-all sm:hidden" />
-      <ul className="hidden sm:flex gap-4 items-center">
-        {routes.map(({ label, path }) => (
-          <li
-            key={path}
-            className={
-              pathname === path ? 'text-slate-950' + linkStyles : linkStyles
-            }
-          >
-            <Link href={path}>{label}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <header>
+      <div className="text-4xl flex justify-between items-center px-2 pt-8 md:px-8 max-w-6xl mx-auto">
+        <Logo />
+        <AlignJustify
+          className="hover:cursor-pointer hover:scale-110 transition-all sm:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+        />
+
+        <ul className="hidden sm:flex gap-4 items-center">
+          {routes.map(({ label, path }) => (
+            <li
+              key={path}
+              className={cn(linkStyles, {
+                'text-slate-950': pathname === path
+              })}
+            >
+              <Link href={path}>{label}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <nav
+        className={cn(
+          'sm:hidden fixed inset-0 bg-blue-50 z-10 transition-transform transform',
+          {
+            'translate-x-full': !isOpen,
+            'translate-x-0': isOpen
+          }
+        )}
+      >
+        <CircleX onClick={handleToggleMenu} />
+        <ul className="flex flex-col gap-4 items-center h-full justify-center">
+          {routes.map(({ label, path }) => (
+            <li
+              key={path}
+              className={cn(linkStyles, {
+                'text-slate-950': pathname === path
+              })}
+              onClick={handleToggleMenu}
+            >
+              <Link href={path}>{label}</Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
   )
 }
