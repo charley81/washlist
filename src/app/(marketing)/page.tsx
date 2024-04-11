@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -16,8 +17,12 @@ export default function Home() {
           lifetime access for $3.99
         </p>
         <div className="pt-16 flex gap-2">
-          <Button>Get started</Button>
-          <Button variant="outline">Get started</Button>
+          <Button asChild>
+            <Link href="/sign-up">Get started</Link>
+          </Button>
+          <Button asChild variant="outline">
+            <Link href="/log-in">Login</Link>
+          </Button>
         </div>
       </div>
     </main>

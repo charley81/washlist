@@ -1,3 +1,3 @@
 export default function AccountPage() {
-  return <div className="text-6xl">AccountPage</div>
+  return <div className="text-6xl"></div>
 }
