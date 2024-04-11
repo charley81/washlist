@@ -33,7 +33,7 @@ export default function AppNavSlideIn({
         size="icon"
         className="hover:drop-shadow-lg active:scale-105 mt-8 ml-4"
       >
-        <X onClick={onToggleMenu} />
+        <X onClick={onToggleMenu} size={24} />
       </Button>
 
       <ul className="flex flex-col gap-4 items-center h-full justify-center">

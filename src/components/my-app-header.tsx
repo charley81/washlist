@@ -7,6 +7,7 @@ import { AlignJustify, X } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import AppNavSlideIn from './app-nav-slide-in'
+import { Button } from './ui/button'
 
 type MyAppNavLink = {
   label: string
@@ -40,7 +41,7 @@ export default function MyAppHeader() {
         <AlignJustify
           className="hover:cursor-pointer hover:scale-110 transition-all sm:hidden"
           onClick={() => setIsOpen(!isOpen)}
-          size={64}
+          size={32}
         />
 
         <ul className="hidden sm:flex gap-4 items-center">
