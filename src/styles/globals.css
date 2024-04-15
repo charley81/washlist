@@ -7,3 +7,7 @@
     @apply text-slate-600 font-semibold text-base hover:text-blue-700 focus:text-blue-700 transition;
   }
 }
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
