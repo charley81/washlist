@@ -6,14 +6,16 @@ import { Separator } from '@/components/ui/separator'
 import { ChevronDown } from 'lucide-react'
 import { Button } from './ui/button'
 import { Client } from '@/lib/types'
+import { useClientContext } from '@/lib/hooks'
 
 type ClientScrollMenuProps = {
   clients: Client[]
 }
 
-export default function ClientScrollMenu({ clients }: ClientScrollMenuProps) {
+export default function ClientScrollMenu() {
   const [isAtBottom, setIsAtBottom] = useState(false)
-  console.log(clients)
+  const { clients } = useClientContext()
+
   const checkScrollPosition = (event: React.UIEvent<HTMLDivElement>) => {
     const { scrollTop, scrollHeight, clientHeight } =
       event.target as HTMLDivElement
