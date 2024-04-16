@@ -1,14 +1,8 @@
-type Client = {
-  name: string
-  vehicleYear: number
-  vehicleColor: string
-  vehicleMake: string
-  vehicleModel: string
-  notes: string
-}
+import { Client } from './types'
 
 const tempClients: Client[] = [
   {
+    id: '1',
     name: 'Mike Smith',
     vehicleYear: 2018,
     vehicleColor: 'red',
@@ -18,6 +12,7 @@ const tempClients: Client[] = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.'
   },
   {
+    id: '2',
     name: 'John Doe',
     vehicleYear: 1997,
     vehicleColor: 'blue',
@@ -27,6 +22,7 @@ const tempClients: Client[] = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.'
   },
   {
+    id: '3',
     name: 'Amy Jones',
     vehicleYear: 2024,
     vehicleColor: 'Silver',
@@ -36,6 +32,7 @@ const tempClients: Client[] = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.'
   },
   {
+    id: '4',
     name: 'Mamie Sanders',
     vehicleYear: 2024,
     vehicleColor: 'Silver',
@@ -45,6 +42,7 @@ const tempClients: Client[] = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.'
   },
   {
+    id: '5',
     name: 'Sid Jones',
     vehicleYear: 2024,
     vehicleColor: 'Silver',
