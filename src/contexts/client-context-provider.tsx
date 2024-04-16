@@ -1,15 +1,49 @@
 'use client'
 
+import { Client } from '@/lib/types'
 import { createContext, useState } from 'react'
 
-export const ClientContext = createContext(null)
+type ClientContextProviderProps = {
+  initialClientData: Client[]
+  children: React.ReactNode
+}
 
-export default function ClientContextProvider({ initialClientData, children }) {
+type TClientContext = {
+  clients: Client[]
+  selectedClientId: string | null
+  selectedClient: Client | undefined
+  handleChangeSelectedClientId: (id: string) => void
+}
+
+export const ClientContext = createContext<TClientContext | null>(null)
+
+export default function ClientContextProvider({
+  initialClientData,
+  children
+}: ClientContextProviderProps) {
+  // state
   const [clients, setClients] = useState(initialClientData)
-  const [selectedClientId, setSelectedClientId] = useState(null)
+  const [selectedClientId, setSelectedClientId] = useState<string | null>(null)
+
+  // derived state
+  const selectedClient = clients.find(
+    (client) => client.id === selectedClientId
+  )!
+
+  // handlers
+  const handleChangeSelectedClientId = (id: string) => {
+    setSelectedClientId(id)
+  }
 
   return (
-    <ClientContext.Provider value={{ clients, selectedClientId }}>
+    <ClientContext.Provider
+      value={{
+        clients,
+        selectedClientId,
+        handleChangeSelectedClientId,
+        selectedClient
+      }}
+    >
       {children}
     </ClientContext.Provider>
   )
