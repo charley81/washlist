@@ -2,7 +2,7 @@ import { Button } from './ui/button'
 
 export default function ClientCount() {
   return (
-    <div className="mt-20 flex justify-between items-center">
+    <div className="flex justify-between items-center">
       <h3 className="font-bold text-base">
         Current Clients: <span>3</span>
       </h3>
