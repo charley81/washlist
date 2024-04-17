@@ -1,5 +1,5 @@
 import { Client } from '@/lib/types'
-import { Button } from './ui/button'
+import { Button } from '../ui/button'
 
 type ClientInfoHeaderProps = {
   client: Client

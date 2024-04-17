@@ -24,13 +24,3 @@ export default function ClientInfo() {
     </section>
   )
 }
-
-// Client = {
-//   id: string;
-//   name: string;
-//   vehicleYear: number;
-//   vehicleColor: string;
-//   vehicleMake: string;
-//   vehicleModel: string;
-//   notes: string;
-// }
