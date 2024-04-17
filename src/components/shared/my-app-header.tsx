@@ -1,13 +1,13 @@
 'use client'
 
 import { useState } from 'react'
-import Logo from '@/components/logo'
+import Logo from '@/components/shared/logo'
 import { cn } from '@/lib/utils'
 import { AlignJustify, X } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import AppNavSlideIn from './app-nav-slide-in'
-import { Button } from './ui/button'
+import { Button } from '../ui/button'
 
 type MyAppNavLink = {
   label: string

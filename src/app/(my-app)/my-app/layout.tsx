@@ -1,5 +1,5 @@
-import MyAppFooter from '@/components/my-app-footer'
-import MyAppHeader from '@/components/my-app-header'
+import MyAppFooter from '@/components/shared/my-app-footer'
+import MyAppHeader from '@/components/shared/my-app-header'
 import ClientContextProvider from '@/contexts/client-context-provider'
 import type { Metadata } from 'next'
 import { tempClients } from '@/lib/temp-data'
