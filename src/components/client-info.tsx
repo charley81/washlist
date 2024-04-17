@@ -1,16 +1,36 @@
 'use client'
 
 import { useClientContext } from '@/lib/hooks'
+import ClientInfoHeader from './client-info-header'
+import ClientInfoMake from './client-info-make'
+import ClientInfoNotes from './client-info-notes'
 
 export default function ClientInfo() {
   const { selectedClient } = useClientContext()
 
+  if (!selectedClient) {
+    return (
+      <section className="w-full h-full">
+        <h1 className="text-2xl text-center">No client selected</h1>
+      </section>
+    )
+  }
+
   return (
     <section className="w-full h-full">
-      <h3>{selectedClient?.name}</h3>
-      {/* header  */}
-      {/* make */}
-      {/* notes */}
+      <ClientInfoHeader client={selectedClient} />
+      <ClientInfoMake client={selectedClient} />
+      <ClientInfoNotes client={selectedClient} />
     </section>
   )
 }
+
+// Client = {
+//   id: string;
+//   name: string;
+//   vehicleYear: number;
+//   vehicleColor: string;
+//   vehicleMake: string;
+//   vehicleModel: string;
+//   notes: string;
+// }
